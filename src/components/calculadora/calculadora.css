@@ -1,0 +1,80 @@
+.calculadora {
+    padding: 20px;
+    height: 700px;
+    width: 400px;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.calculadora_btns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+}
+
+.btn_sep {
+    grid-column-start: 3;
+}
+
+.calculadora_btns button {
+    border: 0;
+    outline: 0;
+    border-radius: 10px;
+    font-size: 1.75rem;
+    font-weight: 500;
+    background-color: transparent;
+    color: #6d6d6d;
+}
+
+.calculadora_btns button:last-child {
+    color: #fff;
+    background-color: #FF9500;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    
+}
+
+.calculadora_btns .op {
+    color: #FF9500;
+    /* font-size: 2rem; */
+}
+
+.result {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.result_display {
+    font-size: 3.5rem;
+    line-height: 1;
+    transform-origin: right bottom;
+    transition: transform 0.3s ease;
+    color: #2f2d2f;
+}
+
+.result_display:last-child {
+    position: absolute;
+    right: 0;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .calculadora {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+}
