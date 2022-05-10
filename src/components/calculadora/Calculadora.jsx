@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import './calculadora.css';
 import Container from '@mui/material/Container';
+import './calculadora.css';
+
 
 
 const Calculadora = () => {
@@ -12,14 +13,20 @@ const Calculadora = () => {
 
     function inputNum(e) {
         let val = e.target.value;
-        if (num == 0){
-            console.log(typeof(num))
+        let lastChar = num.toString().charAt(num.length - 1);
+
+        if (num.toString().includes(".") && val === "."){
+            return;
+        }
+        else if (val === "." && lastChar === "."){
+            return;
+        }
+        else if (num == 0){
             setNum(val);
         }
         else {
             setNum(num + val);
         }
-        console.log(val)
     }
 
     function allClear(e) {
@@ -28,8 +35,6 @@ const Calculadora = () => {
         setHistory("")
     }
     function clear() {
-        console.log("num: " + typeof(num));
-        console.log("Oldnum: " + oldNum);
         if (num !== 0) {
             let novoValor = num.toString().slice(0, -1);
             if (novoValor === "") {
